@@ -1,14 +1,24 @@
+import os #operating system
+
 shop_cart = [] #儲存商品名稱
-with open('products.csv' ,'r', encoding = 'utf-8') as f:
-	for line in f:
-		if '商品,價格' in line:
-			continue
-			#跳過之後的指令，直接下一輪的for loop，沒有跳出迴圈，只是跳下一回
-		name, price = line.strip().split(',')
-		#strip()是要去除最後面的\n
-		#split(',')是要去除逗號
-		shop_cart.append([name, price])
-print (shop_cart)
+if os.path.isfile('products.csv'):
+#輸入檔名＝檢查檔案有沒有在相對路徑
+	print ('yeah！找到檔案了！')
+
+	#讀取檔案
+	with open('products.csv' ,'r', encoding = 'utf-8') as f:
+		for line in f:
+			if '商品,價格' in line:
+				continue
+				#跳過之後的指令，直接下一輪的for loop，沒有跳出迴圈，只是跳下一回
+			name, price = line.strip().split(',')
+			#strip()是要去除最後面的\n
+			#split(',')是要去除逗號
+			shop_cart.append([name, price])
+	print (shop_cart)
+
+else:
+	print ('沒有檔案耶⋯⋯')
 
 #讓使用者輸入
 while True:
