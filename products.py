@@ -13,5 +13,5 @@ while True:
 	#shop_cart.append(pro_pri)
 print (shop_cart)
 
-for i in shop_cart:
-	print (i)
+for product in shop_cart:
+	print (product[0], '的價格是', product[1])
