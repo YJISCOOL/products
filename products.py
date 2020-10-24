@@ -5,9 +5,13 @@ while True:
 		break
 	price = input('inpit price: ') 
 	#有輸入商品時再輸入價格
-	pro_pri =[name, price]
-	#上列等於pro_pri = []
+
+	shop_cart.append([name, price])
+	#pro_pri =[name, price]
 	#pro_pri.append(name)
 	#pro_pri.append(price)
-	shop_cart.append(pro_pri)
+	#shop_cart.append(pro_pri)
 print (shop_cart)
+
+for i in shop_cart:
+	print (i)
